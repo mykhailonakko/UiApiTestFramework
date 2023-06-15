@@ -7,7 +7,7 @@ import org.rptest.core.browser.driver.DriverFactory;
 import org.rptest.core.config.Property;
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
-public class BaseJUnitTest {
+public class BaseJUnit5Test {
     private final Driver driver = new DriverFactory().getDriver();
     IBrowser browser;
     @BeforeAll

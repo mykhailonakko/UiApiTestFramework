@@ -1,4 +1,4 @@
-package org.rptest.uitests.bddtests.stepsdef;
+package org.rptest.uitests.bddtests;
 
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
@@ -6,7 +6,9 @@ import io.cucumber.java.Scenario;
 import org.rptest.core.browser.actions.IBrowser;
 import org.rptest.core.browser.driver.Driver;
 import org.rptest.core.browser.driver.DriverFactory;
-import org.rptest.uitests.bddtests.BrowserHolder;
+import org.rptest.core.utilities.FileUtils;
+
+import java.io.IOException;
 
 public class Hooks {
     Driver driver;
@@ -27,9 +29,10 @@ public class Hooks {
     }
 
     @After(order = 1)
-    public void takeScreenshotOnFail(Scenario scenario) {
+    public void takeScreenshotOnFail(Scenario scenario) throws IOException {
         if (scenario.isFailed()) {
-            browserHolder.getBrowser().takeScreenshot();
+            browserHolder.getBrowser().takeScreenshot(FileUtils.getScreenshotFolderPath()
+                    .resolve(getScenarioNameIncludingExample(scenario) + ".png"));
         }
     }
 
@@ -40,5 +43,9 @@ public class Hooks {
             browser.close();
         }
         driver.quitDriver();
+    }
+
+    private String getScenarioNameIncludingExample(Scenario scenario) {
+        return String.format("%s (Line %s)",scenario.getName(), scenario.getLine());
     }
 }

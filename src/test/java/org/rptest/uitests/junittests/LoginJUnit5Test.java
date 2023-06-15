@@ -6,7 +6,7 @@ import org.junit.jupiter.params.provider.CsvFileSource;
 import org.rptest.stepdefinitions.LoginSteps;
 
 
-class SecondaryLoginJUnitTest extends BaseJUnitTest {
+class LoginJUnit5Test extends BaseJUnit5Test {
     @ParameterizedTest
     @CsvFileSource(resources = "/testdata/InvalidCredentials.csv", numLinesToSkip = 1)
     void testLogin(String username, String password) {

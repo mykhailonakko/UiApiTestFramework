@@ -4,7 +4,7 @@ import com.microsoft.playwright.Page;
 import org.rptest.core.elements.PlaywrightUiElement;
 import org.rptest.core.elements.UiElement;
 
-import java.nio.file.Paths;
+import java.nio.file.Path;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -43,8 +43,7 @@ public class PlaywrightBrowser implements IBrowser {
     }
 
     @Override
-    public void takeScreenshot() {
-        page.screenshot((new Page.ScreenshotOptions()
-                .setPath(Paths.get("screenshot.png"))));
+    public void takeScreenshot(Path path) {
+        page.screenshot(new Page.ScreenshotOptions().setPath(path));
     }
 }
