@@ -34,6 +34,7 @@
     <commons-csv.version>1.10.0</commons-csv.version>
     <maven-compiler-plugin.source>1.8</maven-compiler-plugin.source>
     <maven-compiler-plugin.target>1.8</maven-compiler-plugin.target>
+    <junit-jupiter-api.version>5.9.3</junit-jupiter-api.version>
   </properties>
 
   <dependencies>
@@ -84,6 +85,18 @@
       <groupId>org.apache.commons</groupId>
       <artifactId>commons-csv</artifactId>
       <version>${commons-csv.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-api</artifactId>
+      <version>${junit-jupiter-api.version}</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-params</artifactId>
+      <version>${junit-jupiter-api.version}</version>
+      <scope>test</scope>
     </dependency>
   </dependencies>
 </project>

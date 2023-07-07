@@ -4,11 +4,11 @@ import com.microsoft.playwright.Locator;
 import org.rptest.core.logger.ILogger;
 import org.rptest.core.logger.LoggerFactory;
 
-public class PwUiElement implements UiElement{
+public class PlaywrightUiElement implements UiElement{
     private final Locator locator;
     private final ILogger logger = LoggerFactory.getLogger();
 
-    public PwUiElement(Locator locator) {
+    public PlaywrightUiElement(Locator locator) {
         this.locator = locator;
     }
 
