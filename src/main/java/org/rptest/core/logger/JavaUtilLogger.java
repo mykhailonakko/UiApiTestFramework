@@ -20,7 +20,8 @@ public class JavaUtilLogger implements ILogger {
 
     private String getCallerClassName() {
         StackTraceElement[] stElements = Thread.currentThread().getStackTrace();
-        String className = stElements[3].getClassName();
+        int classCallerStackTraceIndex = 3;
+        String className = stElements[classCallerStackTraceIndex].getClassName();
         try {
             return Class.forName(className).getName();
         } catch (ClassNotFoundException e) {
