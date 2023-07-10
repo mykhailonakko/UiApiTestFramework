@@ -33,9 +33,4 @@ public class LoginTestNG extends BaseTestNG{
         loginStepsDef.performLogin(username, password);
         Assert.assertFalse(loginStepsDef.isLoggedInSuccessfully());
     }
-
-    @Test(dataProvider = "credentialsProvider")
-    public void testanything(String username, String password) {
-        Assert.assertFalse(false);
-    }
 }
