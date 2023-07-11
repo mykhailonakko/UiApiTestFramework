@@ -3,7 +3,7 @@ package org.rptest.uitests.testng;
 import org.apache.commons.csv.CSVRecord;
 import org.rptest.core.browser.actions.IBrowser;
 import org.rptest.core.utilities.FileUtils;
-import org.rptest.stepdefinitions.LoginStepsDef;
+import org.rptest.stepdefinitions.LoginSteps;
 import org.testng.Assert;
 import org.testng.ITestContext;
 import org.testng.annotations.DataProvider;
@@ -29,7 +29,7 @@ public class LoginTestNG extends BaseTestNG{
     @Test(dataProvider = "credentialsProvider")
     public void testLogin(String username, String password, ITestContext testContext) {
         IBrowser browser = (IBrowser) testContext.getAttribute("browser");
-        LoginStepsDef loginStepsDef = new LoginStepsDef(browser);
+        LoginSteps loginStepsDef = new LoginSteps(browser);
         loginStepsDef.performLogin(username, password);
         Assert.assertFalse(loginStepsDef.isLoggedInSuccessfully());
     }
