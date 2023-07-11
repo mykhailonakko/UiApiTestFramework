@@ -1,4 +1,4 @@
-package org.rptest.core.browser;
+package org.rptest.core.constants;
 
 import lombok.AllArgsConstructor;
 

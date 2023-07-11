@@ -1,9 +1,13 @@
 package org.rptest.stepdefinitions;
 
+import org.rptest.core.browser.actions.IBrowser;
 import org.rptest.pages.LoginPage;
 
 public class LoginStepsDef {
-    private final LoginPage loginPage = new LoginPage();
+    private final LoginPage loginPage;
+    public LoginStepsDef(IBrowser browser) {
+        this.loginPage = new LoginPage(browser);
+    }
 
     public void performLogin(String username, String password) {
         loginPage.getUserNameInput().setText(username);
