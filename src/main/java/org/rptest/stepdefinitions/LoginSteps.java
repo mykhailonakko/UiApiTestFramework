@@ -3,9 +3,9 @@ package org.rptest.stepdefinitions;
 import org.rptest.core.browser.actions.IBrowser;
 import org.rptest.pages.LoginPage;
 
-public class LoginStepsDef {
+public class LoginSteps {
     private final LoginPage loginPage;
-    public LoginStepsDef(IBrowser browser) {
+    public LoginSteps(IBrowser browser) {
         this.loginPage = new LoginPage(browser);
     }
 
