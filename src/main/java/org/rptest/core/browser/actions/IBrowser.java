@@ -8,7 +8,7 @@ public interface IBrowser {
     void open(String url);
     void close();
     String getCurrentUrl();
-
+    void takeScreenshot();
     UiElement findElement(String xpath);
     List<UiElement> findElements(String xpath);
 }

@@ -5,32 +5,22 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import junit.framework.Assert;
 import org.rptest.core.browser.actions.IBrowser;
-import org.rptest.core.browser.driver.Driver;
-import org.rptest.core.browser.driver.DriverFactory;
 import org.rptest.core.config.Property;
 import org.rptest.stepdefinitions.LoginSteps;
+import org.rptest.uitests.bddtests.BrowserHolder;
 
 public class LoginStepsDef {
-    Driver driver;
     IBrowser browser;
     LoginSteps loginSteps;
 
-//    private final BrowserHolder browserHolder;
-//    private final LoginSteps loginSteps;
-
-//    public LoginStepsDef(BrowserHolder browserHolder) {
-//        this.browserHolder = browserHolder;
-//        loginSteps = new LoginSteps(browserHolder.getBrowser());
-//    }
-
+    public LoginStepsDef(BrowserHolder browserHolder) {
+        this.browser = browserHolder.getBrowser();
+        this.loginSteps = new LoginSteps(browser);
+    }
 
     @Given("I am on Login page")
     public void iAmOnLoginPage() {
-        driver = new DriverFactory().getDriver();
-        driver.initiateDriver();
-        browser = driver.getBrowser();
         browser.open(Property.COMMON_PROPERTY.baseUrl());
-        loginSteps = new LoginSteps(browser);
     }
 
     @When("I enter username {string} and password {string}")
