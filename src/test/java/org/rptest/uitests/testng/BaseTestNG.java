@@ -22,12 +22,6 @@ public class BaseTestNG {
 
     @AfterMethod
     public void tearDown(ITestContext testContext) {
-//        ((IBrowser) testContext.getAttribute("browser")).close();
         ((Driver) testContext.getAttribute("driver")).quitDriver();
     }
-
-//    @AfterTest
-//    public void quitDriver(ITestContext testContext) {
-//
-//    }
 }
