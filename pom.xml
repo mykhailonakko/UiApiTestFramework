@@ -126,6 +126,7 @@
         <cucumber.tests.includes>**/*Runner.java</cucumber.tests.includes>
         <junit5.tests.includes>**/*JUnit5Test.java</junit5.tests.includes>
         <testng.tests.includes>**/*TestNG.java</testng.tests.includes>
+        <httpclient.version>5.2.1</httpclient.version>
     </properties>
 
     <dependencyManagement>
@@ -223,6 +224,16 @@
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-params</artifactId>
             <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.httpcomponents.client5</groupId>
+            <artifactId>httpclient5</artifactId>
+            <version>${httpclient.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.httpcomponents.client5</groupId>
+            <artifactId>httpclient5-fluent</artifactId>
+            <version>${httpclient.version}</version>
         </dependency>
     </dependencies>
 

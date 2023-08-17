@@ -6,7 +6,7 @@ import io.cucumber.java.en.When;
 import org.junit.jupiter.api.Assertions;
 import org.rptest.core.browser.actions.IBrowser;
 import org.rptest.core.config.Property;
-import org.rptest.stepdefinitions.LoginSteps;
+import org.rptest.stepdefinitions.ui.LoginSteps;
 import org.rptest.uitests.bddtests.BrowserHolder;
 
 public class LoginStepsDef {
@@ -15,7 +15,7 @@ public class LoginStepsDef {
 
     public LoginStepsDef(BrowserHolder browserHolder) {
         this.browser = browserHolder.getBrowser();
-        this.loginSteps = new org.rptest.stepdefinitions.LoginSteps(browser);
+        this.loginSteps = new LoginSteps(browser);
     }
 
     @Given("I am on Login page")

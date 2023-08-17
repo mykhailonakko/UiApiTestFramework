@@ -22,4 +22,10 @@ public interface Configuration extends Config {
 
     @Key("screenshots_path")
     String screenshotsPath();
+
+    @Key("rp_project_name")
+    String rpProjectName();
+
+    @Key("api_client")
+    String apiClient();
 }

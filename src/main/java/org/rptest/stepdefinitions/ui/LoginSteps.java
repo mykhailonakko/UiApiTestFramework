@@ -1,4 +1,4 @@
-package org.rptest.stepdefinitions;
+package org.rptest.stepdefinitions.ui;
 
 import org.rptest.core.browser.actions.IBrowser;
 import org.rptest.pages.LoginPage;
