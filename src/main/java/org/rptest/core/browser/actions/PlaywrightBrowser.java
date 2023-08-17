@@ -4,6 +4,7 @@ import com.microsoft.playwright.Page;
 import org.rptest.core.elements.PlaywrightUiElement;
 import org.rptest.core.elements.UiElement;
 
+import java.nio.file.Path;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -39,5 +40,10 @@ public class PlaywrightBrowser implements IBrowser {
         return page.locator(xpath).all().stream()
                 .map(PlaywrightUiElement::new)
                 .collect(Collectors.toList());
+    }
+
+    @Override
+    public void takeScreenshot(Path path) {
+        page.screenshot(new Page.ScreenshotOptions().setPath(path));
     }
 }

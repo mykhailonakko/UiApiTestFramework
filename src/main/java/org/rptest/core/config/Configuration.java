@@ -19,4 +19,7 @@ public interface Configuration extends Config {
 
     @Key("base_url")
     String baseUrl();
+
+    @Key("screenshots_path")
+    String screenshotsPath();
 }
