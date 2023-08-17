@@ -33,6 +33,6 @@ public class ApacheHttpClient implements ApiClient {
     }
 
     private Header getAuthHeader() {
-        return new BasicHeader("Authorization", "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2OTEwNjE2ODEsInVzZXJfbmFtZSI6ImRlZmF1bHQiLCJhdXRob3JpdGllcyI6WyJST0xFX1VTRVIiXSwianRpIjoiMWZlZjg3ZmItM2FhMC00OWZiLTkwZTMtMDk3NTljZDE5YWFiIiwiY2xpZW50X2lkIjoidWkiLCJzY29wZSI6WyJ1aSJdfQ.f6JXuH1-FqeBnrYWQNl42ujs8OCqUGkKpVXgQ3fNhYo");
+        return new BasicHeader("Authorization", "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2OTIzNjk1MTgsInVzZXJfbmFtZSI6ImRlZmF1bHQiLCJhdXRob3JpdGllcyI6WyJST0xFX1VTRVIiXSwianRpIjoiYTgzNTIxMmYtOGVhMC00ODFhLWE5Y2ItYzYyMDliYzYyNWRhIiwiY2xpZW50X2lkIjoidWkiLCJzY29wZSI6WyJ1aSJdfQ.1cvhrjoyNUtmhpp-XtxxS_UVEWE3O7Pi6sbps27G94I");
     }
 }
