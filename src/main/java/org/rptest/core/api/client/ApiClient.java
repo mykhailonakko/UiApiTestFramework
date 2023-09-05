@@ -1,8 +1,8 @@
 package org.rptest.core.api.client;
 
-import java.util.Map;
+import javafx.util.Pair;
 
 public interface ApiClient {
     ApiResponse sendGetRequest(String url);
-    ApiResponse sendPostRequest(String url, String body, Map<String, String> headers);
+    ApiResponse sendPostRequest(String url, String body, Pair<String, String> headers);
 }

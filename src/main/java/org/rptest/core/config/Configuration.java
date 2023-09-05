@@ -11,21 +11,30 @@ public interface Configuration extends Config {
     @Key("headless")
     @DefaultValue("false")
     boolean headlessMode();
-    @Key("ui_library")
+    @Key("ui.library")
     String uiLibrary();
 
-    @Key("logger_library")
+    @Key("logger.library")
     String loggerLibrary();
 
-    @Key("base_url")
+    @Key("run.env")
+    String runEnv();
+
+    @Key("${run.env}.base.url")
     String baseUrl();
 
-    @Key("screenshots_path")
+    @Key("screenshots.path")
     String screenshotsPath();
 
-    @Key("rp_project_name")
+    @Key("rp.project.name")
     String rpProjectName();
 
-    @Key("api_client")
+    @Key("api.client")
     String apiClient();
+
+    @Key("api.admin.username")
+    String apiUsername();
+
+    @Key("api.admin.password")
+    String apiPassword();
 }
