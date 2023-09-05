@@ -8,12 +8,12 @@ pipeline {
                     properties([
                         parameters([
                         choice(
-                            choices: ['Chrome', 'Edge', 'Firefox'],
+                            choices: ['CHROME', 'EDGE', 'FIREFOX'],
                             name: 'BROWSER',
                             description: 'Browser name to run UI tests',
                         ),
                         choice(
-                            choices: ['Local', 'Remote'],
+                            choices: ['local', 'remote'],
                             name: 'RUN_ENVIRONMENT',
                             description: 'Specify the environment for test execution',
                         ),

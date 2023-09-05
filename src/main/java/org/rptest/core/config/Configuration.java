@@ -3,10 +3,10 @@ package org.rptest.core.config;
 import org.aeonbits.owner.Config;
 
 @Config.LoadPolicy(Config.LoadType.MERGE)
-@Config.Sources({"system:env", "file:src/main/resources/general.properties"})
+@Config.Sources({"system:properties", "file:src/main/resources/general.properties"})
 public interface Configuration extends Config {
     @Key("browser")
-    String browserType();
+    String browser();
 
     @Key("headless")
     @DefaultValue("false")
@@ -17,10 +17,10 @@ public interface Configuration extends Config {
     @Key("logger.library")
     String loggerLibrary();
 
-    @Key("run.env")
-    String runEnv();
+    @Key("env")
+    String env();
 
-    @Key("${run.env}.base.url")
+    @Key("${env}.base.url")
     String baseUrl();
 
     @Key("screenshots.path")

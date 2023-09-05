@@ -45,7 +45,7 @@ public class PlaywrightDriver implements Driver {
     }
 
     private Browser startSpecificBrowser() {
-        BrowserType browserType = Enum.valueOf(BrowserType.class, COMMON_PROPERTY.browserType().toUpperCase());
+        BrowserType browserType = Enum.valueOf(BrowserType.class, COMMON_PROPERTY.browser().toUpperCase());
         logger.info("STARTING BROWSER: " + browserType.name());
         switch (browserType) {
             case CHROME:
