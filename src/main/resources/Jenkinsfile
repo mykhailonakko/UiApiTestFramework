@@ -11,19 +11,16 @@ pipeline {
                             choices: ['CHROME', 'EDGE', 'FIREFOX'],
                             name: 'BROWSER',
                             description: 'Browser name to run UI tests',
-                            defaultValue: 'CHROME',
                         ),
                         choice(
-                            choices: ['local', 'remote'],
+                            choices: ['remote', 'local'],
                             name: 'RUN_ENVIRONMENT',
                             description: 'Specify the environment for test execution',
-                            defaultValue: 'remote',
                         ),
                         choice(
                             choices: ['cucumber-tests', 'junit5-tests', 'testng-tests'],
                             name: 'TEST_RUNNER',
                             description: 'Platform to execute tests',
-                            defaultValue: 'cucumber-tests',
                         )
                     ])
                     ])
