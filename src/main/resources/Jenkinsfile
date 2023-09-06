@@ -22,7 +22,7 @@ pipeline {
                             name: 'TEST_RUNNER',
                             description: 'Platform to execute tests',
                         )
-                    ])
+                        ])
                     ])
                 }
             }
