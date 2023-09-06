@@ -37,4 +37,5 @@ public interface Configuration extends Config {
 
     @Key("api.admin.password")
     String apiPassword();
+
 }
