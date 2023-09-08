@@ -3,6 +3,8 @@ package org.rptest.core.browser.actions;
 import com.microsoft.playwright.Page;
 import org.rptest.core.elements.PlaywrightUiElement;
 import org.rptest.core.elements.UiElement;
+import org.rptest.core.logger.ILogger;
+import org.rptest.core.logger.LoggerFactory;
 
 import java.nio.file.Path;
 import java.util.List;
@@ -10,6 +12,7 @@ import java.util.stream.Collectors;
 
 public class PlaywrightBrowser implements IBrowser {
     private final Page page;
+    private final ILogger logger = LoggerFactory.getLogger();
 
     public PlaywrightBrowser(Page page) {
         this.page = page;
@@ -18,6 +21,7 @@ public class PlaywrightBrowser implements IBrowser {
     @Override
     public void open(String url) {
         page.navigate(url);
+        logger.info("OPENING URL: " + url);
     }
 
     @Override

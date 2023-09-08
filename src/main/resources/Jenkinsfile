@@ -1,0 +1,43 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Setup parameters') {
+            steps {
+                script {
+                    properties([
+                        parameters([
+                        choice(
+                            choices: ['CHROME', 'EDGE', 'FIREFOX'],
+                            name: 'BROWSER',
+                            description: 'Browser name to run UI tests',
+                        ),
+                        choice(
+                            choices: ['remote', 'local'],
+                            name: 'RUN_ENVIRONMENT',
+                            description: 'Specify the environment for test execution',
+                        ),
+                        choice(
+                            choices: ['cucumber-tests', 'junit5-tests', 'testng-tests'],
+                            name: 'TEST_RUNNER',
+                            description: 'Platform to execute tests',
+                        )
+                        ])
+                    ])
+                }
+            }
+        }
+        stage('Build') {
+            steps {
+                echo 'Build is started'
+                bat "mvn clean install -DskipTests"
+            }
+        }
+        stage("Test") {
+            steps {
+                echo 'Running tests'
+                bat "mvn test -Denv=${params.RUN_ENVIRONMENT} -Dbrowser=${params.BROWSER} -P${params.TEST_RUNNER}"
+            }
+        }
+    }
+}

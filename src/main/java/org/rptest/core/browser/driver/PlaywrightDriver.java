@@ -5,10 +5,13 @@ import com.microsoft.playwright.BrowserType.LaunchOptions;
 import org.rptest.core.browser.actions.IBrowser;
 import org.rptest.core.browser.actions.PlaywrightBrowser;
 import org.rptest.core.constants.BrowserType;
+import org.rptest.core.logger.ILogger;
+import org.rptest.core.logger.LoggerFactory;
 
 import static org.rptest.core.config.Property.COMMON_PROPERTY;
 
 public class PlaywrightDriver implements Driver {
+    private final ILogger logger = LoggerFactory.getLogger();
     private Playwright playwright;
     private BrowserContext browserContext;
     private Browser browser;
@@ -42,7 +45,8 @@ public class PlaywrightDriver implements Driver {
     }
 
     private Browser startSpecificBrowser() {
-        BrowserType browserType = Enum.valueOf(BrowserType.class, COMMON_PROPERTY.browserType().toUpperCase());
+        BrowserType browserType = Enum.valueOf(BrowserType.class, COMMON_PROPERTY.browser().toUpperCase());
+        logger.info("STARTING BROWSER: " + browserType.name());
         switch (browserType) {
             case CHROME:
             case EDGE:

@@ -3,7 +3,7 @@ package org.rptest.uitests.testng;
 import org.apache.commons.csv.CSVRecord;
 import org.rptest.core.browser.actions.IBrowser;
 import org.rptest.core.utilities.FileUtils;
-import org.rptest.stepdefinitions.LoginSteps;
+import org.rptest.stepdefinitions.ui.LoginSteps;
 import org.testng.Assert;
 import org.testng.ITestContext;
 import org.testng.annotations.DataProvider;

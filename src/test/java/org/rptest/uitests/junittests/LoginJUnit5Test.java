@@ -3,7 +3,7 @@ package org.rptest.uitests.junittests;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
-import org.rptest.stepdefinitions.LoginSteps;
+import org.rptest.stepdefinitions.ui.LoginSteps;
 
 
 class LoginJUnit5Test extends BaseJUnit5Test {

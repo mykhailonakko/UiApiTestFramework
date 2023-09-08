@@ -15,4 +15,4 @@ Feature: Login
     Then I check login is successful
     Examples:
       | username | password |
-      | default  | 1q2w3e   |
+      | default  | 1q2w3e3  |

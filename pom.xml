@@ -117,8 +117,8 @@
         <playwright.version>1.35.0</playwright.version>
         <lombok.version>1.18.26</lombok.version>
         <commons-csv.version>1.10.0</commons-csv.version>
-        <maven-compiler-plugin.source>1.8</maven-compiler-plugin.source>
-        <maven-compiler-plugin.target>1.8</maven-compiler-plugin.target>
+        <maven-compiler-plugin.source>17</maven-compiler-plugin.source>
+        <maven-compiler-plugin.target>17</maven-compiler-plugin.target>
         <junit-jupiter-api.version>5.9.3</junit-jupiter-api.version>
         <cucumber-java.version>7.13.0</cucumber-java.version>
         <maven-surefire-plugin.version>3.1.2</maven-surefire-plugin.version>
@@ -126,6 +126,9 @@
         <cucumber.tests.includes>**/*Runner.java</cucumber.tests.includes>
         <junit5.tests.includes>**/*JUnit5Test.java</junit5.tests.includes>
         <testng.tests.includes>**/*TestNG.java</testng.tests.includes>
+        <httpclient.version>5.2.1</httpclient.version>
+        <report-portal-junit5>agent-java-junit5</report-portal-junit5>
+        <agent-java-cucumber6.version>5.2.0</agent-java-cucumber6.version>
     </properties>
 
     <dependencyManagement>
@@ -194,10 +197,14 @@
             <version>${client-java.version}</version>
         </dependency>
         <dependency>
-            <groupId>org.testng</groupId>
-            <artifactId>testng</artifactId>
-            <version>${testng.version}</version>
-            <scope>compile</scope>
+            <groupId>com.epam.reportportal</groupId>
+            <artifactId>${report-portal-junit5}</artifactId>
+            <version>5.1.10</version>
+        </dependency>
+        <dependency>
+            <groupId>com.epam.reportportal</groupId>
+            <artifactId>agent-java-cucumber6</artifactId>
+            <version>${agent-java-cucumber6.version}</version>
         </dependency>
         <dependency>
             <groupId>com.microsoft.playwright</groupId>
@@ -223,6 +230,16 @@
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-params</artifactId>
             <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.httpcomponents.client5</groupId>
+            <artifactId>httpclient5</artifactId>
+            <version>${httpclient.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.httpcomponents.client5</groupId>
+            <artifactId>httpclient5-fluent</artifactId>
+            <version>${httpclient.version}</version>
         </dependency>
     </dependencies>
 

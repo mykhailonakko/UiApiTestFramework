@@ -3,23 +3,41 @@ package org.rptest.core.config;
 import org.aeonbits.owner.Config;
 
 @Config.LoadPolicy(Config.LoadType.MERGE)
-@Config.Sources({"system:env", "file:src/main/resources/general.properties"})
+@Config.Sources({"system:properties",
+        "file:src/main/resources/general.properties",
+        "file:src/main/resources/browser.properties",
+        "file:src/main/resources/api.properties"})
 public interface Configuration extends Config {
     @Key("browser")
-    String browserType();
+    String browser();
 
     @Key("headless")
     @DefaultValue("false")
     boolean headlessMode();
-    @Key("ui_library")
+    @Key("ui.library")
     String uiLibrary();
 
-    @Key("logger_library")
+    @Key("logger.library")
     String loggerLibrary();
 
-    @Key("base_url")
+    @Key("env")
+    String env();
+
+    @Key("${env}.base.url")
     String baseUrl();
 
-    @Key("screenshots_path")
+    @Key("screenshots.path")
     String screenshotsPath();
+
+    @Key("rp.project.name")
+    String rpProjectName();
+
+    @Key("api.client")
+    String apiClient();
+
+    @Key("api.admin.username")
+    String apiUsername();
+
+    @Key("api.admin.password")
+    String apiPassword();
 }
