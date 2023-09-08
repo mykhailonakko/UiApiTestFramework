@@ -3,7 +3,10 @@ package org.rptest.core.config;
 import org.aeonbits.owner.Config;
 
 @Config.LoadPolicy(Config.LoadType.MERGE)
-@Config.Sources({"system:properties", "file:src/main/resources/general.properties"})
+@Config.Sources({"system:properties",
+        "file:src/main/resources/general.properties",
+        "file:src/main/resources/browser.properties",
+        "file:src/main/resources/api.properties"})
 public interface Configuration extends Config {
     @Key("browser")
     String browser();

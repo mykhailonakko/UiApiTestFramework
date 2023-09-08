@@ -1,6 +1,6 @@
 package org.rptest.core.api.client;
 
-import javafx.util.Pair;
+import org.apache.commons.lang3.tuple.Pair;
 
 public interface ApiClient {
     ApiResponse sendGetRequest(String url);

@@ -1,7 +1,7 @@
 package org.rptest.core.api.client;
 
-import javafx.util.Pair;
 import lombok.SneakyThrows;
+import org.apache.commons.lang3.tuple.Pair;
 import org.apache.hc.client5.http.fluent.Request;
 import org.apache.hc.core5.http.ContentType;
 import org.apache.hc.core5.http.Header;
